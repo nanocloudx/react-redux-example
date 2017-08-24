@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import App from '../component/app'
-import { increment } from '../action/app'
+import { increment, decrement, reset } from '../action/app'
 
 function mapStateToProps(state) {
   return state
@@ -10,7 +10,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleClick: () => { dispatch(increment()) }
+    onClickIncrement: () => { dispatch(increment()) },
+    onClickDecrement: () => { dispatch(decrement()) },
+    onClickReset: () => { dispatch(reset()) }
   }
 }
 
